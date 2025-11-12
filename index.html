@@ -212,21 +212,24 @@
             width: 55px; /* Taille de la bulle colorée */
             height: 55px;
             border-radius: 50%;
-            display: grid;
-            place-items: center;
+            display: flex; /* Utilisé pour le centrage interne */
+            justify-content: center;
+            align-items: center;
             flex-shrink: 0; 
             box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4);
             overflow: hidden; 
+            /* Ajout de la couleur de fond du thème ici si l'image interne n'est pas chargée */
         }
 
         .workshop-logo-img {
-            /* L'image elle-même devient un disque blanc dans la bulle colorée */
-            width: 48px; 
-            height: 48px;
+            /* L'image elle-même est le disque blanc interne, rond et centré */
+            width: 44px; /* Nouvelle taille réduite pour laisser plus de marge */
+            height: 44px;
             border-radius: 50%; /* CLIPS L'IMAGE EN CERCLE */
             background-color: white; /* Fond blanc pour le contraste */
-            padding: 5px; 
+            padding: 3px; /* Réduit pour plus de sécurité */
             object-fit: contain; /* S'assure que tout le logo est visible */
+            display: block; /* Important pour le sizing */
         }
 
         .workshop-title {
@@ -267,7 +270,8 @@
             margin-bottom: 25px;
             padding: 15px;
             background: #f8f9ff;
-            border-left: 4px solid var(--theme-header-color);
+            /* La bordure est définie par les classes spécifiques ci-dessous */
+            border-left: 4px solid var(--theme-header-color); 
             border-radius: 5px;
         }
 
@@ -332,7 +336,7 @@
             background: var(--theme-citoyennete-gradient);
         }
          .workshop-card:nth-child(3) .icon { color: var(--theme-citoyennete-color); }
-         .workshop-card:nth-child(3) .workshop-intro { border-left-color: var(--theme-citoyennete-color); }
+         .workshop-card:nth-child(3) .workshop-intro { border-left-color: var(--theme-citoyennete-color); } /* CORRECTION AJOUTÉE */
          .workshop-card:nth-child(3) .workshop-logo-bubble { background-color: var(--theme-citoyennete-color); }
 
         /* 4: IA 1 (Rose/Rouge doux) */
@@ -539,7 +543,7 @@
                 <div class="workshop-content">
                     <div class="workshop-body">
                         <div class="workshop-intro">
-                            Passage de la simple organisation à l'interaction en temps réel et l'évaluation. Niveau accessible si vous maîtrisez le niveau 1.
+                            Passage de la simple organisation à l'**interaction en temps réel** et aux **workflows pédagogiques** avancés. Niveau accessible si vous maîtrisez le niveau 1.
                         </div>
                         <div class="objective-item">
                             <div class="icon"><i class="fa-solid fa-robot"></i></div>
@@ -578,6 +582,10 @@
                 </div>
                 <div class="workshop-content">
                     <div class="workshop-body">
+                        <!-- NOUVELLE DESCRIPTION AJOUTÉE -->
+                        <div class="workshop-intro">
+                            Découvrir et maîtriser les outils numériques souverains, pérennes et en constante évolution mis à disposition par le ministère.
+                        </div>
                         <div class="objective-item">
                             <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
                             <div class="objective-text">Utiliser des outils qui garantissent le respect du RGPD (Cloud, doc...)</div>
