@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan de Formation Numérique</title>
     
-    <!-- Ajout des polices Google Fonts (Poppins et Lato) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Ajout des polices Google Fonts (Poppins et Lato) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Ajout de Font Awesome pour les icônes --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Ajout de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         /* Définitions de couleurs pour la cohérence */
@@ -169,7 +171,8 @@
 
         .workshops-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            /* CORRECTION: Force l'affichage sur une seule colonne */
+            grid-template-columns: 1fr; 
             gap: 30px;
             margin-bottom: 40px;
         }
@@ -209,9 +212,8 @@
             width: 55px; /* Taille de la bulle colorée */
             height: 55px;
             border-radius: 50%;
-            display: flex; /* Utilisation de flexbox pour le centrage */
-            justify-content: center; /* Centrage horizontal */
-            align-items: center; /* Centrage vertical */
+            display: grid;
+            place-items: center;
             flex-shrink: 0; 
             box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4);
             overflow: hidden; 
@@ -225,9 +227,6 @@
             background-color: white; /* Fond blanc pour le contraste */
             padding: 5px; 
             object-fit: contain; /* S'assure que tout le logo est visible */
-            display: flex; /* Ajout pour le centrage du contenu de l'image si besoin */
-            justify-content: center;
-            align-items: center;
         }
 
         .workshop-title {
@@ -419,12 +418,27 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+
+        /* STYLE FOOTER */
+        .app-footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #c3cfe2; /* Ligne de séparation douce */
+            color: var(--color-text-medium);
+            font-size: 0.9em;
+        }
+        .app-footer span {
+            font-weight: 700;
+            color: var(--color-text-dark);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <!-- LOGOS HEADER --><div class="logo-container">
+            <!-- LOGOS HEADER -->
+            <div class="logo-container">
                 <img src="https://pbs.twimg.com/profile_images/1963329246442463232/hhXFsrWC_400x400.jpg" alt="Logo de l'Académie ou DSDEN" class="logo-img">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Logo_lyc%C3%A9e.png/250px-Logo_lyc%C3%A9e.png" alt="Logo du Lycée" class="logo-img">
             </div>
@@ -459,10 +473,12 @@
         </div>
 
         <div class="workshops-grid">
-            <!-- Workshop 1: Pearltrees Niveau 1 (Bleu/Violet - Base) --><div class="workshop-card" onclick="toggleExpand(this)">
+            <!-- Workshop 1: Pearltrees Niveau 1 (Bleu/Violet - Base) -->
+            <div class="workshop-card" onclick="toggleExpand(this)">
                 <div class="workshop-header">
                     <div class="workshop-left-content">
-                        <!-- LOGO PEARLTREES --><div class="workshop-logo-bubble">
+                        <!-- LOGO PEARLTREES -->
+                        <div class="workshop-logo-bubble">
                             <img src="https://play-lh.googleusercontent.com/vXdgOTD0WBZT8s0UWGCbSDUUJKuVYs71xDYZsqdnN538ekoOWq0gSiJyR-L8WQwU44o9" alt="Logo Pearltrees" class="workshop-logo-img">
                         </div>
                         <div>
@@ -505,10 +521,12 @@
                 </div>
             </div>
 
-            <!-- Workshop 2: Pearltrees Niveau 2 (Bleu/Violet - Avancé) --><div class="workshop-card" onclick="toggleExpand(this)">
+            <!-- Workshop 2: Pearltrees Niveau 2 (Bleu/Violet - Avancé) -->
+            <div class="workshop-card" onclick="toggleExpand(this)">
                 <div class="workshop-header">
                     <div class="workshop-left-content">
-                         <!-- LOGO PEARLTREES --><div class="workshop-logo-bubble">
+                         <!-- LOGO PEARLTREES -->
+                        <div class="workshop-logo-bubble">
                             <img src="https://play-lh.googleusercontent.com/vXdgOTD0WBZT8s0UWGCbSDUUJKuVYs71xDYZsqdnN538ekoOWq0gSiJyR-L8WQwU44o9" alt="Logo Pearltrees" class="workshop-logo-img">
                         </div>
                         <div>
@@ -543,10 +561,12 @@
                 </div>
             </div>
 
-            <!-- Workshop 3: Citoyenneté (Vert Eau/Soft Teal) --><div class="workshop-card" onclick="toggleExpand(this)">
+            <!-- Workshop 3: Citoyenneté (Vert Eau/Soft Teal) -->
+            <div class="workshop-card" onclick="toggleExpand(this)">
                 <div class="workshop-header">
                     <div class="workshop-left-content">
-                        <!-- LOGO APPS EDUCATION --><div class="workshop-logo-bubble">
+                        <!-- LOGO APPS EDUCATION -->
+                        <div class="workshop-logo-bubble">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Apps.education.fr_logo.svg/1200px-Apps.education.fr_logo.svg.png" alt="Logo Apps Education" class="workshop-logo-img">
                         </div>
                         <div>
@@ -578,10 +598,12 @@
                 </div>
             </div>
 
-            <!-- Workshop 4: IA Niveau 1 (Rose/Rouge doux) --><div class="workshop-card" onclick="toggleExpand(this)">
+            <!-- Workshop 4: IA Niveau 1 (Rose/Rouge doux) -->
+            <div class="workshop-card" onclick="toggleExpand(this)">
                 <div class="workshop-header">
                     <div class="workshop-left-content">
-                        <!-- LOGO IA --><div class="workshop-logo-bubble">
+                        <!-- LOGO IA -->
+                        <div class="workshop-logo-bubble">
                             <img src="https://www.creativefabrica.com/wp-content/uploads/2021/11/26/IA-logo-design-vector-Graphics-20773387-1-1-580x386.jpg" alt="Logo IA" class="workshop-logo-img">
                         </div>
                         <div>
@@ -620,10 +642,12 @@
                 </div>
             </div>
 
-            <!-- Workshop 5: IA Niveau 2 (Rose/Rouge profond) --><div class="workshop-card" onclick="toggleExpand(this)">
+            <!-- Workshop 5: IA Niveau 2 (Rose/Rouge profond) -->
+            <div class="workshop-card" onclick="toggleExpand(this)">
                 <div class="workshop-header">
                     <div class="workshop-left-content">
-                        <!-- LOGO IA --><div class="workshop-logo-bubble">
+                        <!-- LOGO IA -->
+                        <div class="workshop-logo-bubble">
                             <img src="https://www.creativefabrica.com/wp-content/uploads/2021/11/26/IA-logo-design-vector-Graphics-20773387-1-1-580x386.jpg" alt="Logo IA" class="workshop-logo-img">
                         </div>
                         <div>
@@ -662,6 +686,12 @@
                 </div>
             </div>
         </div>
+
+        <!-- BANDEAU DE FIN AJOUTÉ -->
+        <footer class="app-footer">
+            © 2025. Mis en page avec des IA génératives.
+        </footer>
+        <!-- FIN BANDEAU DE FIN -->
 
     </div>
 
